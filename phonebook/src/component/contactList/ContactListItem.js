@@ -1,5 +1,5 @@
 import React from 'react'
-
+import PropTypes from 'prop-types';
 const ContactListItem = ({contact:{id, name, number}, deleteContact}) => {
     return (
         <li>
@@ -9,5 +9,15 @@ const ContactListItem = ({contact:{id, name, number}, deleteContact}) => {
         </li>
     );
 }
+
+ContactListItem.propTypes = {
+    deleteContact:PropTypes.func,
+    contact: PropTypes.shape({
+        id:PropTypes.string,
+        name:PropTypes.string,
+        number:PropTypes.string  
+    })
+}
+
 
 export default ContactListItem;
